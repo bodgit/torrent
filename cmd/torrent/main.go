@@ -52,6 +52,10 @@ func clean(c *cli.Context) error {
 
 	dir := path.Join(c.Args().Get(1), torrent.Info.Name)
 
+	if _, err := os.Stat(dir); err != nil {
+		return cli.NewExitError(err, 1)
+	}
+
 	files := make(map[string]struct{})
 
 	for _, file := range torrent.Info.Files {
