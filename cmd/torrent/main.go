@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
-	"path"
 
 	"github.com/bodgit/torrent"
 	"github.com/gertd/go-pluralize"
